@@ -21,6 +21,11 @@ def evaluate(args):
     log = utils.get_logger("EvaluateMatting")
     dataset_names = args.dataset_split_name
 
+    # Devu customize to inference
+    # args.inference = True
+    # args.shuffle = False
+    # args.inference_output = "image_and_mask"
+
     if args.inference:
         for dataset_name in dataset_names:
             evaluator[dataset_name].inference(args.checkpoint_path)
